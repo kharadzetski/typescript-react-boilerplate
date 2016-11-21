@@ -15,7 +15,6 @@ export class Main extends React.Component<HelloProps, { counter: number }> {
   };
 
   render() {
-    return <h1 onClick={this.btnClick}>Hello from {this.props.compiler}
-      and {this.props.framework}! Click counter is {this.state.counter}</h1>;
+    return <h1 onClick={this.btnClick}>Hello from {this.props.compiler} and {this.props.framework}! Click counter is {this.state.counter}</h1>;
   };
 }
