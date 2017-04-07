@@ -8,6 +8,6 @@
         "jsx": "react"
     },
     "include": [
-        "./app/src/**/*.tsx?"
+        "./app/src/ts/**/*"
     ]
 }
