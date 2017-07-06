@@ -4,23 +4,17 @@ const HtmlPlugin = require('html-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader')
 
 const root = path.resolve('./');
-const rendererPath = `${root}/app/renderer/src`;
+const mainPath = `${root}/app/main/src`;
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
 	entry: {
-		renderer: `${rendererPath}/ts/index.tsx`,
-		vendor: ['react', 'react-dom']
+		main: `${mainPath}/ts/main.ts`
 	},
 	output: {
 		path: `${root}/dist`,
 		filename: '[name].js',
 		publicPath: '/'
-	},
-
-	devServer: {
-		port: 3000,
-		compress: true
 	},
 
 	// Enable sourcemaps for debugging webpack's output.
@@ -30,14 +24,7 @@ module.exports = {
 		extensions: [".ts", ".tsx", ".js"]
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new HtmlPlugin({
-			chunks: ['renderer', 'vendor'],
-			filename: 'index.html',
-			template: `${rendererPath}/public/index.html`
-		}),
-		new CheckerPlugin(),
-		new webpack.optimize.CommonsChunkPlugin('renderer'),
+		new CheckerPlugin()
 	],
 	module: {
 		rules: [
@@ -46,5 +33,6 @@ module.exports = {
 			// All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
 			{ test: /\.js$/, enforce: "pre", use: "source-map-loader" }
 		]
-	}
+	},
+	target: 'electron'
 };

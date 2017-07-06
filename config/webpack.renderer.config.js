@@ -37,7 +37,7 @@ module.exports = {
 			template: `${rendererPath}/public/index.html`
 		}),
 		new CheckerPlugin(),
-		new webpack.optimize.CommonsChunkPlugin('renderer'),
+		new webpack.optimize.CommonsChunkPlugin('vendor'),
 	],
 	module: {
 		rules: [
@@ -46,5 +46,6 @@ module.exports = {
 			// All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
 			{ test: /\.js$/, enforce: "pre", use: "source-map-loader" }
 		]
-	}
+	},
+	target: 'electron-renderer'
 };
