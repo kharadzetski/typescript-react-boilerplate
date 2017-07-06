@@ -1,7 +1,7 @@
 {
   "name": "typescript2-react-webpack-boilerplate",
   "version": "1.2.0",
-  "description": "TypeScript v2.0, React v14, Webpack v1.13 with hot reload boierplate",
+  "description": "TypeScript v2, React v15, Webpack v3 with hot reload boierplate",
   "main": "./app/index.html",
   "keywords": [
     "react",
