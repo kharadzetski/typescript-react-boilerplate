@@ -10,7 +10,7 @@ export class Main extends React.Component<HelloProps, { counter: number }> {
   }
 
   private btnClick = (): boolean => {
-    this.setState({counter: this.state.counter + 1});
+    this.setState({counter: this.state.counter + 12});
     return false;
   };
 

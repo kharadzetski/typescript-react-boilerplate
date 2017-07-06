@@ -18,13 +18,17 @@ module.exports = {
 		publicPath: '/'
 	},
 
+	devServer: {
+		port: 3000,
+		compress: true
+	},
+
 	// Enable sourcemaps for debugging webpack's output.
 	devtool: isDev && 'source-map',
 	resolve: {
 		// Add '.ts' and '.tsx' as resolvable extensions.
 		extensions: [".ts", ".tsx", ".js"]
-	}
-	,
+	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlPlugin({
@@ -32,7 +36,8 @@ module.exports = {
 			filename: 'index.html',
 			template: `${rendererPath}/public/index.html`
 		}),
-		new CheckerPlugin()
+		new CheckerPlugin(),
+		new webpack.optimize.CommonsChunkPlugin('renderer'),
 	],
 	module: {
 		rules: [
