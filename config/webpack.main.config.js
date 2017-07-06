@@ -12,7 +12,7 @@ module.exports = {
 		main: `${mainPath}/ts/main.ts`
 	},
 	output: {
-		path: `${root}/dist`,
+		path: `${root}/target`,
 		filename: '[name].js',
 		publicPath: '/'
 	},

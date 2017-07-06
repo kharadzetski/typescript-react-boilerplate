@@ -6,5 +6,5 @@
 .idea
 node_modules
 dist
-
+target
 out/

@@ -2,7 +2,7 @@
   "name": "typescript-react-boilerplate",
   "version": "1.2.0",
   "description": "TypeScript v2, React v15, Webpack v3 with hot reload boierplate",
-  "main": "./dist/main.js",
+  "main": "./target/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/lieone/typescript-react-boilerplate.git"
@@ -14,21 +14,23 @@
     "hot",
     "webpack-dev-server"
   ],
-  "config": {
-    "forge": "./config/forge.config.js"
+  "build": {
+    "appId": "com.example.myapp",
+    "files": [
+      "./target/**/*"
+    ],
+    "asar": "false"
   },
   "scripts": {
-    "clean": "rimraf ./dist",
+    "clean": "rimraf ./dist && rimraf ./target",
     "test": "echo \"Error: no test specified\" && exit 1",
     "renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.renderer.config.js --inline",
-    "predist": "npm run clean",
     "main-dev": "cross-env NODE_ENV=development webpack --config ./config/webpack.main.config.js -w",
     "main-dist": "cross-env NODE_ENV=production webpack --config ./config/webpack.main.config.js",
     "electron-dev": "cross-env NODE_ENV=development electron .",
     "renderer-dist": "cross-env NODE_ENV=production webpack --config ./config/webpack.renderer.config.js --optimize-minimize",
-    "prepackage": "npm run main-dist",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "prepackage": "npm run clean && npm run main-dist && npm run renderer-dist",
+    "package": "build"
   },
   "author": "lieone",
   "license": "MIT",
