@@ -1,9 +1,12 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
+
+const rendererPath = './app/renderer/src';
+
 module.exports = {
 	entry: {
-		app: './app/src/ts/index.tsx',
+		renderer: `${rendererPath}/ts/index.tsx`,
 		vendor: []
 	},
 	output: {
@@ -22,9 +25,9 @@ module.exports = {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlPlugin({
-			chunks: ['app', 'vendor'],
+			chunks: ['renderer', 'vendor'],
 			filename: 'index.html',
-			template: path.join('./app', 'index.html')
+			template: `${rendererPath}/public/index.html`
 		})
 	],
 	module: {
