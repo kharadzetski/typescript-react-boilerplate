@@ -2,7 +2,11 @@
   "name": "typescript2-react-webpack-boilerplate",
   "version": "1.2.0",
   "description": "TypeScript v2, React v15, Webpack v3 with hot reload boierplate",
-  "main": "./app/index.html",
+  "main": "./dist/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lieone/typescript-react-boilerplate.git"
+  },
   "keywords": [
     "react",
     "typescript",
@@ -30,6 +34,7 @@
   "devDependencies": {
     "awesome-typescript-loader": "3.2.1",
     "cross-env": "5.0.1",
+    "electron": "1.6.11",
     "html-webpack-plugin": "2.29.0",
     "rimraf": "2.6.1",
     "source-map-loader": "^0.1.5",
