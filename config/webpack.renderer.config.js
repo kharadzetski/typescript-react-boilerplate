@@ -2,15 +2,16 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 
-const rendererPath = './app/renderer/src';
+const root = path.resolve('./');
+const rendererPath = `${root}/app/renderer/src`;
 
 module.exports = {
 	entry: {
 		renderer: `${rendererPath}/ts/index.tsx`,
-		vendor: []
+		vendor: ['react', 'react-dom']
 	},
 	output: {
-		path: './dist',
+		path: `${root}/dist`,
 		filename: '[name].js',
 		publicPath: '/'
 	},
@@ -19,7 +20,7 @@ module.exports = {
 	devtool: "source-map",
 	resolve: {
 		// Add '.ts' and '.tsx' as resolvable extensions.
-		extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+		extensions: [".ts", ".tsx", ".js"]
 	}
 	,
 	plugins: [
@@ -31,14 +32,11 @@ module.exports = {
 		})
 	],
 	module: {
-		loaders: [
+		rules: [
 			// All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-			{ test: /\.tsx?$/, loaders: ["ts-loader"] }
-		],
-
-		preLoaders: [
+			{ test: /\.tsx?$/, use: ["ts-loader"] },
 			// All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-			{ test: /\.js$/, loader: "source-map-loader" }
+			{ test: /\.js$/, enforce: "pre", use: "source-map-loader" }
 		]
 	}
 };

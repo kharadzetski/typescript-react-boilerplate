@@ -11,9 +11,11 @@
     "webpack-dev-server"
   ],
   "scripts": {
+    "clean": "rimraf ./dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hot": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.config.js --hot --inline",
-    "dist": "rimraf ./dist && cross-env NODE_ENV=production webpack --config ./config/webpack.config.js"
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.renderer.config.js --hot --inline",
+    "predist": "npm run clean",
+    "dist": "cross-env NODE_ENV=production webpack --config ./config/webpack.renderer.config.js"
   },
   "author": "lieone",
   "license": "MIT",
@@ -32,7 +34,7 @@
     "source-map-loader": "^0.1.5",
     "ts-loader": "2.2.2",
     "typescript": "2.4.1",
-    "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "3.0.0",
+    "webpack-dev-server": "2.5.0"
   }
 }
