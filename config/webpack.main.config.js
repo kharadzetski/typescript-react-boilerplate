@@ -16,7 +16,9 @@ module.exports = {
 		filename: '[name].js',
 		publicPath: '/'
 	},
-
+	node: {
+		__dirname: false
+	},
 	// Enable sourcemaps for debugging webpack's output.
 	devtool: isDev && 'source-map',
 	resolve: {
