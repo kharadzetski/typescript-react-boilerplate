@@ -5,5 +5,5 @@ import { Main } from "./Main";
 
 ReactDOM.render(
   <Main compiler="TypeScript" framework="React" />,
-  document.getElementById("example")
+  document.getElementById("app")
 );
