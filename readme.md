@@ -1,14 +1,22 @@
-TypeScript + React + Webpack starter app
+TypeScript + React + Webpack + Electron starter app
 ======================
 Simple TypeScript v2.0 example app with React and Webpack (hot reload support)
-### Simple build
+### Production build
  ```bash
-npm i && npm run dist
+npm i && npm run package
  ```
- Then open './dist/index.html'
+ Check out './dist' folder.
 
-### Webpack dev server
+### Dev mode
+## Run webpack renderer dev-server
  ```bash
-npm i && npm run hot
+npm run renderer-dev
  ```
- Then open 'localhost:8080' in your browser.
+ ## Run webpack main watch
+ ```bash
+npm run main-dev
+ ```
+ ## Run electron
+ ```bash
+npm run electron-dev
+ ```
