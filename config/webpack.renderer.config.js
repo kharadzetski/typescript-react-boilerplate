@@ -5,7 +5,8 @@ const { CheckerPlugin } = require('awesome-typescript-loader')
 
 const root = path.resolve('./');
 const rendererPath = `${root}/app/renderer/src`;
-const isDev = process.env.NODE_ENV === 'development';
+const NODE_ENV = process.env.NODE_ENV;
+const isDev = NODE_ENV === 'development';
 
 module.exports = {
 	entry: {
@@ -37,6 +38,11 @@ module.exports = {
 		}),
 		new CheckerPlugin(),
 		new webpack.optimize.CommonsChunkPlugin('vendor'),
+		new webpack.DefinePlugin({
+			"process.env": { 
+				NODE_ENV: JSON.stringify(NODE_ENV)
+			}
+		})
 	],
 	module: {
 		rules: [
