@@ -32,7 +32,8 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlPlugin({
 			filename: 'index.html',
-			template: `${rendererPath}/public/index.html`
+			template: `${rendererPath}/public/index.html`,
+			title: "Electron"
 		}),
 		new CheckerPlugin(),
 		new webpack.optimize.CommonsChunkPlugin('vendor'),
