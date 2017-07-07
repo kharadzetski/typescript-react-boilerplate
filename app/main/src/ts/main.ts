@@ -4,10 +4,7 @@ let win;
 const isDev = process.env.NODE_ENV === 'development';
 
 app.on('ready', () => {
-    win = new BrowserWindow({
-      webPreferences: { webSecurity: false }
-    });
+    win = new BrowserWindow();
     const url = isDev ? 'http://localhost:3000' : `file://${__dirname}/index.html`;
     win.loadURL(url);
-    win.webContents.openDevTools();
 });
