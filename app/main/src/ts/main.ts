@@ -9,6 +9,5 @@ app.on('ready', () => {
     });
     const url = isDev ? 'http://localhost:3000' : `file://${__dirname}/index.html`;
     win.loadURL(url);
-    console.log(url);
     win.webContents.openDevTools();
 });

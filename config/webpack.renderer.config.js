@@ -16,12 +16,10 @@ module.exports = {
 	output: {
 		path: `${root}/target`,
 		filename: '[name].js',
-		publicPath: './'
 	},
 
 	devServer: {
-		port: 3000,
-		compress: true
+		port: 3000
 	},
 
 	// Enable sourcemaps for debugging webpack's output.
