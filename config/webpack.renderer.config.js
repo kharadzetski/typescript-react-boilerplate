@@ -15,7 +15,7 @@ module.exports = {
 	output: {
 		path: `${root}/target`,
 		filename: '[name].js',
-		publicPath: '/'
+		publicPath: './'
 	},
 
 	devServer: {
@@ -32,7 +32,6 @@ module.exports = {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlPlugin({
-			chunks: ['renderer', 'vendor'],
 			filename: 'index.html',
 			template: `${rendererPath}/public/index.html`
 		}),
