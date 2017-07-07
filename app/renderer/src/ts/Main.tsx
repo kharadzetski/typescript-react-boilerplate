@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { increment } from './utils/increment';
 
 export interface HelloProps { compiler: string; framework: string;
 }
@@ -10,7 +11,7 @@ export class Main extends React.Component<HelloProps, { counter: number }> {
   }
 
   private btnClick = (): boolean => {
-    this.setState({counter: this.state.counter + 1});
+    this.setState({counter: increment(this.state.counter)});
     return false;
   };
 

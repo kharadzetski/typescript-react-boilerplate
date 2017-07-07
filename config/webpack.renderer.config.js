@@ -31,9 +31,9 @@ module.exports = {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlPlugin({
+			title: "Electron",
 			filename: 'index.html',
-			template: `${rendererPath}/public/index.html`,
-			title: "Electron"
+			template: `${rendererPath}/public/index.html`
 		}),
 		new CheckerPlugin(),
 		new webpack.optimize.CommonsChunkPlugin('vendor'),
