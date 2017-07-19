@@ -1,2 +1,2 @@
 
-export const increment = (arg: number) => arg + 1;
+export const increment = (arg: number): number => arg + 1;
