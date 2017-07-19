@@ -8,15 +8,11 @@ npm i && npm run package
  Check out './dist' folder.
 
 ## Dev mode
-### Run webpack renderer dev-server
+### Run webpack renderer and main dev-server
  ```bash
-npm run renderer-dev
+npm start
  ```
-### Run webpack main watch
- ```bash
-npm run main-dev
- ```
-### Run electron
+### Run electron in another terminal instance
  ```bash
 npm run electron-dev
  ```

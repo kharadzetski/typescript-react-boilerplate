@@ -34,7 +34,8 @@
     "electron-dev": "cross-env NODE_ENV=development electron .",
     "electron-prod": "cross-env NODE_ENV=production electron .",
     "prepackage": "npm run clean && npm run main-dist && npm run renderer-dist",
-    "package": "build"
+    "package": "build",
+    "start": "concurrently --kill-others 'npm run main-dev' 'npm run renderer-dev'"
   },
   "license": "MIT",
   "dependencies": {
@@ -47,6 +48,7 @@
   },
   "devDependencies": {
     "awesome-typescript-loader": "3.2.1",
+    "concurrently": "3.5.0",
     "cross-env": "5.0.1",
     "electron": "1.6.11",
     "electron-builder": "19.13.0",
