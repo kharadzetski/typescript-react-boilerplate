@@ -35,7 +35,7 @@
     "electron-prod": "cross-env NODE_ENV=production electron .",
     "prepackage": "npm run clean && npm run main-dist && npm run renderer-dist",
     "package": "build",
-    "start": "concurrently --kill-others 'npm run main-dev' 'npm run renderer-dev'"
+    "start": "concurrently --kill-others \"npm run main-dev\" \"npm run renderer-dev\""
   },
   "license": "MIT",
   "dependencies": {
