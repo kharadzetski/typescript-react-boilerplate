@@ -5,8 +5,8 @@ export interface HelloProps { compiler: string; framework: string;
 }
 
 export class Main extends React.Component<HelloProps, { counter: number }> {
-  constructor() {
-    super();
+  constructor(props: HelloProps) {
+    super(props);
     this.state = {counter: 0};
   }
 
