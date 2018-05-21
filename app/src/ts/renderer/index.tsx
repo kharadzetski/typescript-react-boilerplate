@@ -9,7 +9,7 @@ ReactDOM.render(
 );
 
 
-// код работает только на запущенном webpack-dev-server с включенной опцией --hot
+// works on 'webpack-dev-server' with '--hot' enabled
 if (module.hot) {
   module.hot.accept('./Main', () => {
     const Component = require<any>('./Main').Main;
