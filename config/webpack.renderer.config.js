@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 const { CheckerPlugin, TsConfigPathsPlugin } = require('awesome-typescript-loader')
 
-const { dependencies, rendererPath, tsconfig, template, target, isDev } = require('./env');
+const { dependencies, rendererPath, tsconfig, template, target, mode, isDev } = require('./env');
 
 module.exports = {
   entry: {
@@ -29,14 +29,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
       title: "Electron",
       filename: 'index.html',
       template
     }),
     new CheckerPlugin(),
-    new webpack.optimize.CommonsChunkPlugin('vendor'),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
@@ -51,5 +49,6 @@ module.exports = {
       { test: /\.js$/, enforce: "pre", use: "source-map-loader" }
     ]
   },
-  target: 'electron-renderer'
+  target: 'electron-renderer',
+  mode // 'production' or 'development' webpack mode
 };

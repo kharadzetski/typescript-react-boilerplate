@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const { CheckerPlugin, TsConfigPathsPlugin } = require('awesome-typescript-loader');
 
-const { mainPath, target, isDev } = require('./env');
+const { mainPath, target, mode, isDev } = require('./env');
 
 module.exports = {
   entry: {
@@ -37,5 +37,6 @@ module.exports = {
       { test: /\.js$/, enforce: "pre", use: "source-map-loader" }
     ]
   },
-  target: 'electron'
+  target: 'electron-main',
+  mode // 'production' or 'development' webpack mode
 };

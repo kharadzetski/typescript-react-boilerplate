@@ -8,7 +8,8 @@ const mainPath = `${srcDir}/main`;
 const rendererPath = `${srcDir}/renderer`;
 const target = `${root}/target`;
 const template = `${root}/app/public/index.html`
-const isDev = process.env.NODE_ENV === 'development';
+const mode = process.env.NODE_ENV;
+const isDev = mode === 'development';
 
 module.exports = {
   root,
@@ -18,5 +19,6 @@ module.exports = {
   rendererPath,
   template,
   target,
+  mode,
   isDev
 };
