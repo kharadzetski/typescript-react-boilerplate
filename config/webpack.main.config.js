@@ -1,10 +1,10 @@
-const webpack = require('webpack');
-const HtmlPlugin = require('html-webpack-plugin');
-const { CheckerPlugin, TsConfigPathsPlugin } = require('awesome-typescript-loader');
+import webpack from 'webpack';
+import HtmlPlugin from 'html-webpack-plugin';
+import { CheckerPlugin, TsConfigPathsPlugin } from 'awesome-typescript-loader';
 
-const { mainPath, target, mode, isDev } = require('./env');
+import { mainPath, target, mode, isDev } from './env';
 
-module.exports = {
+export default {
   entry: {
     main: `${mainPath}/main.ts`
   },
@@ -12,7 +12,7 @@ module.exports = {
     path: target,
     filename: '[name].js',
     publicPath: '/',
-    devtoolModuleFilenameTemplate: "file:///[absolute-resource-path]"
+    devtoolModuleFilenameTemplate: 'file:///[absolute-resource-path]'
   },
   node: {
     __dirname: false
@@ -21,7 +21,7 @@ module.exports = {
   devtool: isDev && 'source-map',
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx", ".js"],
+    extensions: ['.ts', '.tsx', '.js'],
     plugins: [
       new TsConfigPathsPlugin()
     ]
@@ -32,9 +32,9 @@ module.exports = {
   module: {
     rules: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      { test: /\.tsx?$/, use: ["awesome-typescript-loader"] },
+      { test: /\.tsx?$/, use: ['awesome-typescript-loader'] },
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { test: /\.js$/, enforce: "pre", use: "source-map-loader" }
+      { test: /\.js$/, enforce: 'pre', use: 'source-map-loader' }
     ]
   },
   target: 'electron-main',
