@@ -1,10 +1,10 @@
-import webpack from 'webpack';
-import HtmlPlugin from 'html-webpack-plugin';
-import { CheckerPlugin, TsConfigPathsPlugin } from 'awesome-typescript-loader';
+const webpack = require('webpack');
+const HtmlPlugin = require('html-webpack-plugin');
+const { CheckerPlugin, TsConfigPathsPlugin } = require('awesome-typescript-loader');
 
-import { mainPath, target, mode, isDev } from './env';
+const { mainPath, target, mode, isDev } = require('./env');
 
-export default {
+module.exports = {
   entry: {
     main: `${mainPath}/main.ts`
   },

@@ -1,7 +1,6 @@
-import { resolve } from "path";
+const path = require('path');
 
-const root = resolve('./');
-const { dependencies } = require(`${root}/package.json`);
+const root = path.resolve('./');
 const tsconfig = `${root}/tsconfig.json`;
 const srcDir = `${root}/app/src/ts`;
 const mainPath = `${srcDir}/main`;
@@ -11,9 +10,8 @@ const template = `${root}/app/public/index.html`
 const mode = process.env.NODE_ENV;
 const isDev = mode === 'development';
 
-export default {
+module.exports = {
   root,
-  dependencies,
   tsconfig,
   mainPath,
   rendererPath,

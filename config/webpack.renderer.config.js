@@ -1,22 +1,23 @@
-import webpack from 'webpack';
-import path from 'path';
-import HtmlPlugin from 'html-webpack-plugin';
-import { CheckerPlugin, TsConfigPathsPlugin } from 'awesome-typescript-loader';
+const webpack = require('webpack');
+const path = require('path');
+const HtmlPlugin = require('html-webpack-plugin');
+const { CheckerPlugin, TsConfigPathsPlugin } = require('awesome-typescript-loader')
 
-import { dependencies, rendererPath, tsconfig, template, target, mode, isDev } from './env';
+const { rendererPath, tsconfig, template, target, mode, isDev } = require('./env');
 
-export default {
+module.exports = {
   entry: {
-    renderer: `${rendererPath}/index.tsx`,
-    vendor: Object.keys(dependencies)
+    renderer: `${rendererPath}/index.tsx`
   },
   output: {
     path: target,
     filename: '[name].js',
   },
+
   devServer: {
     port: 3000
   },
+
   // Enable sourcemaps for debugging webpack's output.
   devtool: isDev && 'source-map',
   resolve: {
