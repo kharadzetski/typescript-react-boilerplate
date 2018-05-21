@@ -16,3 +16,4 @@ npm start
  ```bash
 npm run electron-dev
  ```
+or run debug configuraion 'Debug Main Process' on Visual Studio Code.
