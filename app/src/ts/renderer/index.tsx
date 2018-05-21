@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { Main } from "./Main";
+import { Main } from '@renderer/Main';
 
 ReactDOM.render(
   <Main compiler="TypeScript" framework="React" />,

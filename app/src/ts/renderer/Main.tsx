@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { increment } from './utils/increment';
+
+import { increment } from '@renderer/utils/increment';
 
 export interface HelloProps { compiler: string; framework: string;
 }

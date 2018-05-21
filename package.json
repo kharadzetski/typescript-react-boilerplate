@@ -1,6 +1,6 @@
 {
   "name": "typescript-react-boilerplate",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Electron v2, TypeScript v2, React v16, Webpack v4 with hot reload boierplate",
   "main": "./target/main.js",
   "author": {
