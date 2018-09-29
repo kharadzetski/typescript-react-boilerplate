@@ -1,6 +1,6 @@
 TypeScript + React + Webpack + Electron starter app
 ======================
-Simple TypeScript v2.8 example app on Electron v2 with React 16 and Webpack 4 (hot reload support)
+Simple TypeScript v3.x example app on Electron v3.x with React 16 and Webpack 4 (hot reload support)
 ## Production build
  ```bash
 npm i && npm run package

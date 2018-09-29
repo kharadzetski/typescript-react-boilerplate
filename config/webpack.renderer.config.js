@@ -1,7 +1,5 @@
-const webpack = require('webpack');
-const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
-const { CheckerPlugin, TsConfigPathsPlugin } = require('awesome-typescript-loader')
+const { TsConfigPathsPlugin } = require('awesome-typescript-loader')
 
 const { rendererPath, template, target, mode, isDev } = require('./env');
 
