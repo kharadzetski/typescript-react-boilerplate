@@ -12,7 +12,7 @@ ReactDOM.render(
 // works on 'webpack-dev-server' with '--hot' enabled
 if (module.hot) {
   module.hot.accept('./Main', () => {
-    const Component = require<any>('./Main').Main;
+    const Component = require('./Main').Main;
     ReactDOM.render(
       <Component />,
       document.getElementById('app')

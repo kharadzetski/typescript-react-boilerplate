@@ -1,7 +1,7 @@
 {
   "name": "typescript-react-boilerplate",
-  "version": "1.4.2",
-  "description": "Electron v2, TypeScript v2, React v16, Webpack v4 with hot reload boierplate",
+  "version": "1.4.3",
+  "description": "Electron v4, TypeScript v3, React v16, Webpack v4 with hot reload boierplate",
   "main": "./target/main.js",
   "author": {
     "name": "lieone",
@@ -43,8 +43,8 @@
     "react-dom": "16.8.6"
   },
   "devDependencies": {
-    "@types/react": "16.8.13",
-    "@types/react-dom": "16.8.3",
+    "@types/react": "16.8.20",
+    "@types/react-dom": "16.8.4",
     "@types/webpack-env": "1.13.9",
     "awesome-typescript-loader": "5.2.1",
     "concurrently": "4.1.0",
@@ -54,9 +54,9 @@
     "html-webpack-plugin": "3.2.0",
     "rimraf": "2.6.3",
     "source-map-loader": "0.2.4",
-    "typescript": "3.4.3",
-    "webpack": "4.29.6",
-    "webpack-cli": "3.3.0",
-    "webpack-dev-server": "3.3.1"
+    "typescript": "3.5.2",
+    "webpack": "4.34.0",
+    "webpack-cli": "3.3.4",
+    "webpack-dev-server": "3.7.1"
   }
 }
