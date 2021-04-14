@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { Component } from "react";
 
 import { increment } from "@renderer/utils/increment";
 
@@ -7,7 +7,7 @@ export interface HelloProps {
   framework: string;
 }
 
-export class Main extends React.Component<HelloProps, { counter: number }> {
+export class Main extends Component<HelloProps, { counter: number }> {
   constructor(props: HelloProps) {
     super(props);
     this.state = { counter: 0 };
