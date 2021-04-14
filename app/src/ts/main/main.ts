@@ -1,5 +1,5 @@
-import { app } from 'electron';
+import { app } from "electron";
 
-import { onReady } from '@main/ready';
+import { onReady } from "@main/ready";
 
-app.on('ready', onReady);
+app.on("ready", onReady);
