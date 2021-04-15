@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { FC, useCallback, useState } from "react";
 
 import { increment } from "@renderer/utils/increment";
 
@@ -7,23 +7,16 @@ export interface HelloProps {
   framework: string;
 }
 
-export class Main extends Component<HelloProps, { counter: number }> {
-  constructor(props: HelloProps) {
-    super(props);
-    this.state = { counter: 0 };
-  }
-
-  private btnClick = (): boolean => {
-    this.setState({ counter: increment(this.state.counter) });
-    return false;
-  };
-
-  render() {
-    return (
-      <h1 onClick={this.btnClick}>
-        Hello from {this.props.compiler} and {this.props.framework}! Click
-        counter is {this.state.counter}
-      </h1>
-    );
-  }
-}
+export const Main: FC<HelloProps> = (props) => {
+  const [counter, setCounter] = useState(0);
+  const btnClick = useCallback(
+    () => setCounter((counter) => increment(counter)),
+    [setCounter]
+  );
+  return (
+    <h1 onClick={btnClick}>
+      Hello from {props.compiler} and {props.framework}! Click counter is{" "}
+      {counter}
+    </h1>
+  );
+};
